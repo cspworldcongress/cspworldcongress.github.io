@@ -176,8 +176,12 @@ h1 {
     background-image: url("weissensee-small-32.jpg");
 }
 
+.kolfuschg {
+    background-image: url("kolfuschg-small-32.jpg");
+}
+
 .thisyear  {
-    background-image: url("colfosco.jpg");
+    background-image: url("cervinia.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
