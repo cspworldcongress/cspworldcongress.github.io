@@ -131,6 +131,17 @@ h1 {
     width:50%;
 }
 
+      
+.kolfuschg {
+    flex-grow: 1;
+    vertical-align: middle;
+    padding-left: 100px;
+    column-gap: 0px;
+    padding: 0px;
+    position:relative;
+    width:105.4%;
+}
+
 .previousft {
     position:absolute;
     top:0;
