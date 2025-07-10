@@ -159,29 +159,29 @@ h1 {
 }
 
 .voels {
-    background-image: url("2023/schlern-small-32.jpg");
+    background-image: url("schlern-small-32.jpg");
     
 }
 
 .kranjska {
-    background-image: url("2023/triglav-small-32.jpg");
+    background-image: url("triglav-small-32.jpg");
  
 }
 
 .molveno {
-    background-image: url("2023/molveno-small-32.jpg");
+    background-image: url("molveno-small-32.jpg");
 }
 
 .weissensee {
-    background-image: url("2023/weissensee-small-32.jpg");
+    background-image: url("weissensee-small-32.jpg");
 }
 
 .colfosco {
-    background-image: url("2024/colfosco.jpg");
+    background-image: url("colfosco.jpg");
 }
 
 .thisyear  {
-    background-image: url("overlook.png");
+    background-image: url("cervinia.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
