@@ -127,19 +127,8 @@ h1 {
     column-gap: 0px;
     padding: 0px;
     position:relative;
-    height:33%;
+    height:50%;
     width:50%;
-}
-
-      
-.kolfuschg {
-    flex-grow: 1;
-    vertical-align: middle;
-    padding-left: 100px;
-    column-gap: 0px;
-    padding: 0px;
-    position:relative;
-    width:100%;
 }
 
 .previousft {
@@ -187,12 +176,12 @@ h1 {
     background-image: url("weissensee-small-32.jpg");
 }
 
-.kolfuschg {
-    background-image: url("kolfuschg-small-32.jpg");
+.colfosco {
+    background-image: url("colfosco.jpg");
 }
 
 .thisyear  {
-    background-image: url("cervinia.jpg");
+    background-image: url("overlook.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -251,6 +240,3 @@ h1 {
         height: auto;
     }
 }
-
-
-
