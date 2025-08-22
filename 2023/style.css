@@ -1,0 +1,188 @@
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+body, html {
+  height: 100%;
+    width: 100%;
+    margin: 0px;
+    /*background-color: #e13300;*/
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topbar{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 10px;
+    color: white;
+}
+
+.topbaritem{
+    flex: flex-grow;
+    text-align: center;
+    font-size: 1.0em;
+    font-weight: bolder;
+}
+
+.page {
+    position: relative;
+}
+
+
+#main {
+background-image: url("matterhorn.jpg");
+background-attachment: fixed;     
+    background-size: cover;
+    height:150vh;
+    font-size: 50px;
+    font-weight: bolder;
+    color: black;
+}
+
+#cwc2023{
+    /*height: 150vh;*/
+    font-size: 30px;
+    font-weight: bolder;
+    color: black;
+}
+
+
+h1 {
+    margin: 0px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    display:flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+  padding: 10px;
+    padding-bottom: 100px;
+}
+
+.weissensee {
+    background-image: url("weissensee.jpeg");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -110vh;
+    width: 100%;
+    height: 180vh;
+    z-index: -1;
+}
+
+.par_bg {
+  height: 60vh;
+  left: 0;
+}
+
+
+.chgbg {
+    opacity: 0;
+    background-color: black;
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+}
+
+.presentation {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    position: relative;
+    width: 90%;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 10px 30px;
+    font-weight: 100;
+}
+
+.item {
+    font-size: 15px;
+    flex-basis: 25%;
+}
+
+.half {
+    flex-basis: 60%;
+}
+
+.item h2 {
+    font-size: 40px;
+}
+
+
+#previouseditions {
+    height: 85vh;   
+}
+
+
+
+.shelf {
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    height:100%;
+}
+
+.previous {
+    flex-grow: 1;
+    vertical-align: middle;
+    padding-left: 100px;
+    column-gap: 0px;
+    padding: 0px;
+    position:relative;
+    height:100%;
+}
+
+.previousft {
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 2;
+}
+
+.year {
+    position: absolute;
+    font-weight: bolder;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,0);
+}
+
+.voels {
+    height: 100%;
+    width: 100%;
+    background-image: url("schlern-small.jpg");
+    background-size: 100% 100%;
+}
+
+.kranjska {
+    background-image: url("triglav-small.jpg");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.molveno {
+    background-image: url("molveno-small.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}
+
