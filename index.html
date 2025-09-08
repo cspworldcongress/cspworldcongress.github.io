@@ -1,239 +1,115 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <title>Homepage of the CSP World Congress</title>
-    <style>
-        /* Layout grid */
-        .presentation {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* three equal columns */
-            gap: 20px;
-        }
+<meta charset="UTF-8">
+<title>CSP World Congress Homepage</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style>
+body { font-family: 'Montserrat', sans-serif; margin:0; padding:0; }
+.topbar { display:flex; background:#006699; padding:10px; color:white; }
+.topbar a { text-decoration:none; color:inherit; margin-right:20px; }
 
-        /* Make programme span col 2+3 */
-        .item.programme-wrapper {
-            grid-column: 2 / span 2;
-        }
+.presentation-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:20px;
+  padding:20px;
+}
 
-        /* Programme table styles */
-        table.programme {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
+.col1 { grid-column:1; }
+.col2 { grid-column:2; }
+.col3 { grid-column:3; }
 
-        table.programme th,
-        table.programme td {
-            border: 1px solid #ccc;
-            padding: 6px 10px;
-            text-align: center;
-            vertical-align: middle;
-        }
+h2 { margin-top:0; }
 
-        table.programme th {
-            background-color: #006699;
-            color: white;
-        }
+table { border-collapse: collapse; width:100%; position:relative; }
+th, td { border:1px solid #ccc; text-align:center; padding:5px; font-size:14px; }
+th { background:#eee; }
 
-        table.programme td.breakfast {
-            background-color: #FFF8DC;
-        }
-        table.programme td.coffee {
-            background-color: #FAEBD7;
-        }
-        table.programme td.lunch {
-            background-color: #F0FFF0;
-        }
-        table.programme td.dinner {
-            background-color: #E6F0FF;
-        }
-        table.programme td.hike {
-            background-color: #BEF9BE;
-        }
-        table.programme td.work {
-            background-color: #BABABA;
-        }
-        table.programme td.midnight {
-            background-color: #C9C2F5;
-        }
+/* Timeline column style */
+.time-column { width:80px; background:#f0f0f0; position:relative; }
+.time-column::before {
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:40px;
+  width:2px;
+  background:#999;
+}
 
-        b, strong {
-            font-weight: 700 !important;
-            font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        }
-    </style>
+.meal { background:#FFF8DC; }
+.coffee { background:#FAEBD7; }
+.work { background:#BABABA; }
+.hike { background:#BEF9BE; }
+
+strong { font-weight:700; }
+</style>
 </head>
 <body>
-    <div class="page" id="main">
-        <div class="topbar">
-            <span class="topbaritem"><a href="#current" style="text-decoration: none; color: inherit;">CWC 2025</a></span>
-            <span class="topbaritem"><a href="#previouseditions" style="text-decoration: none; color: inherit;">PREVIOUS EDITIONS</a></span>
-        </div>
-        <div class="thisyear"></div>
-    </div>
-    
-    <div class="page" id="current">
-        <div class="presentation">
-            <!-- Col 1 -->
-            <div class="item">
-                <h2>Where?</h2>
-                The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.
-                <p>
-                As in previous years, the conference hotel is easily accessible from all over the world by public transport. The Valtournenche, Perrères bus stop is located directly next to the hotel. For bus connections to the hotel from Chatillon-Saint Vincent train station, please visit the <a href="https://aosta.arriva.it/en/valtournenche-cervinia/">Arriva</a> website.</p>
+<div class="topbar">
+    <a href="#current">CWC 2025</a>
+    <a href="#previouseditions">PREVIOUS EDITIONS</a>
+</div>
 
-                <h4>By train</h4>
-                
-                Chatillon-Saint Vincent train station is reachable from Turin in around 2 hours or from Milan in 3.5 hours, the connections and tickets are available on the <a href="https://www.trenitalia.com/en.html">Trenitalia</a> website.
-                
-                There is a <a href="https://www.nightjet.com/en/">Nightjet</a> connection to Milan from Vienna and Munich.
-                
-                <h4>By plane</h4>
-                
-                We recommend flying to Turin or Milan, please consult the airport websites (<a href="https://www.milanomalpensa-airport.com/en">Malpensa</a>, <a href="https://www.milanbergamoairport.it/en/">Bergamo</a>, <a href="https://www.aeroportoditorino.it/en">Turin</a>) for the connections from the airports as many airport trains and busses are not listed on the Trenitalia website.
-                
-                For those arriving later and missing the last train or bus, we can organise a taxi - details will be sent via email a few weeks before the conference.
-            </div>
+<div class="presentation-grid">
 
-            <!-- Col 2 -->
-            <div class="item">
-                <h2>When?</h2>
-                <p>The congress will take place from Monday, 22 September to Friday, 26 September. 
-                Arrival is on Sunday evening and departure is on Saturday morning.</p>
-            </div>
+  <!-- Column 1: Where? -->
+  <div class="col1">
+    <h2>Where?</h2>
+    <p>The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.</p>
+    <p>As in previous years, the conference hotel is easily accessible from all over the world by public transport. The Valtournenche, Perrères bus stop is located directly next to the hotel. For bus connections to the hotel from Chatillon-Saint Vincent train station, please visit the <a href="https://aosta.arriva.it/en/valtournenche-cervinia/">Arriva</a> website.</p>
 
-            <!-- Col 3 -->
-            <div class="item">
-                <h2>How to attend?</h2>
-                <p>As every year, participation is by invitation only. 
-                However, if you have not received an invitation by email but would like to participate, you can email the organisers.
-                A conference fee of 140 euros will be asked for each participant.</p>
-            </div>
+    <h4>By train</h4>
+    <p>Chatillon-Saint Vincent train station is reachable from Turin in around 2 hours or from Milan in 3.5 hours, the connections and tickets are available on the <a href="https://www.trenitalia.com/en.html">Trenitalia</a> website. There is a <a href="https://www.nightjet.com/en/">Nightjet</a> connection to Milan from Vienna and Munich.</p>
 
-            <!-- Programme spanning col 2+3 -->
-            <div class="item programme-wrapper">
-                <h2>Conference Programme</h2>
-                <table class="programme">
-                  <thead>
-                    <tr>
-                      <th>Time</th>
-                      <th>Sept 22</th>
-                      <th>Sept 23</th>
-                      <th>Sept 24</th>
-                      <th>Sept 25</th>
-                      <th>Sept 26</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>05:30 - 08:00</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td class="hike">Post-Hike Run</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>08:00 - 09:30</td>
-                      <td class="breakfast">Breakfast</td>
-                      <td class="breakfast">Breakfast</td>
-                      <td class="breakfast">Breakfast</td>
-                      <td class="breakfast">Breakfast</td>
-                      <td class="breakfast">Breakfast</td>
-                    </tr>
-                    <tr>
-                      <td>09:30 - 10:00</td>
-                      <td>Welcome Address</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>10:00 - 11:00</td>
-                      <td><strong>Talk:</strong> Andrei Krokhin</td>
-                      <td><strong>Talk:</strong> Miklós Maróti</td>
-                      <td><strong>Talk:</strong> Standa Zivny</td>
-                      <td><strong>Talk:</strong> Zarathustra Brady</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>11:00 - 11:30</td>
-                      <td class="coffee">Coffee Break</td>
-                      <td class="coffee">Coffee Break</td>
-                      <td class="coffee">Coffee Break</td>
-                      <td class="coffee">Coffee Break</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>11:30 - 13:00</td>
-                      <td class="work">Work Time</td>
-                      <td class="work">Work Time</td>
-                      <td class="work">Work Time</td>
-                      <td class="work">Work Time</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>13:00 - 14:00</td>
-                      <td class="lunch">Lunch</td>
-                      <td class="lunch">Lunch</td>
-                      <td class="lunch">Lunch</td>
-                      <td class="lunch">Lunch</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>14:00 - 15:30</td>
-                      <td><strong>Talk:</strong> Alexey Barsukov</td>
-                      <td><strong>Talk:</strong> Libor Barto</td>
-                      <td><strong>Talk:</strong> Sebastian Meyer</td>
-                      <td><strong>Talk:</strong> Žaneta Semanišinová</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>15:30 - 16:00</td>
-                      <td class="coffee">Coffee Break</td>
-                      <td class="coffee">Coffee Break</td>
-                      <td class="coffee">Coffee Break</td>
-                      <td class="coffee">Coffee Break</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>16:00 - 19:00</td>
-                      <td class="work">Work Time</td>
-                      <td class="work">Work Time</td>
-                      <td class="work">Work Time</td>
-                      <td class="work">Work Time</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>19:00 - 20:30</td>
-                      <td class="dinner">Dinner</td>
-                      <td class="dinner">Dinner</td>
-                      <td class="dinner">Dinner</td>
-                      <td class="dinner">Dinner</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>20:30 - 21:30</td>
-                      <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
-                      <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
-                      <td><strong>Tutorial:</strong> Gianluca Tasinato</td>
-                      <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>00:00 - open end</td>
-                      <td class="midnight"><strong>Midnight Talk:</strong> Michał Wrona</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
+    <h4>By plane</h4>
+    <p>We recommend flying to Turin or Milan, please consult the airport websites (<a href="https://www.milanomalpensa-airport.com/en">Malpensa</a>, <a href="https://www.milanbergamoairport.it/en/">Bergamo</a>, <a href="https://www.aeroportoditorino.it/en">Turin</a>) for connections from the airports. Taxi info will be sent via email for late arrivals.</p>
+  </div>
 
-            </div>
+  <!-- Column 2: When? -->
+  <div class="col2">
+    <h2>When?</h2>
+    <p>The congress will take place from Monday, 22 September to Friday, 26 September. Arrival is on Sunday evening and departure on Saturday morning.</p>
+  </div>
+
+  <!-- Column 3: How to attend? -->
+  <div class="col3">
+    <h2>How to attend?</h2>
+    <p>Participation is by invitation only. If you have not received an invitation but would like to participate, please email the organisers. A conference fee of 140 euros applies per participant.</p>
+  </div>
+
+  <!-- Programme spanning columns 2+3 with timeline -->
+  <div class="col2" style="grid-column:2 / span 2;">
+    <h2>Conference Programme</h2>
+    <table>
+      <tr>
+        <th>Time</th>
+        <th>Monday 22</th>
+        <th>Tuesday 23</th>
+        <th>Wednesday 24</th>
+        <th>Thursday 25</th>
+        <th>Friday 26</th>
+      </tr>
+      <tr><td class="time-column">05:30-08:00</td><td></td><td></td><td></td><td class="work">Post-Hike Morning Run</td><td></td></tr>
+      <tr><td class="time-column">08:00-09:00</td><td class="meal">Breakfast</td><td class="meal">Breakfast</td><td class="meal"></td><td class="meal">Breakfast</td><td class="meal">Breakfast</td></tr>
+      <tr><td class="time-column">09:00-09:30</td><td></td><td class="meal">Breakfast</td><td class="hike" colspan="1">Congress Hike</td><td></td><td></td></tr>
+      <tr><td class="time-column">09:30-10:00</td><td></td><td></td><td class="hike" colspan="1">Congress Hike</td><td></td><td></td></tr>
+      <tr><td class="time-column">10:00-11:00</td><td><strong>Talk:</strong> Andrei Krokhin</td><td><strong>Talk:</strong> Miklós Maróti</td><td></td><td><strong>Talk:</strong> Standa Zivny</td><td><strong>Talk:</strong> Zarathustra Brady</td></tr>
+      <tr><td class="time-column">11:00-11:30</td><td class="coffee">Coffee Break</td><td class="coffee">Coffee Break</td><td class="hike" colspan="1">Congress Hike</td><td class="coffee">Coffee Break</td><td class="coffee">Coffee Break</td></tr>
+      <tr><td class="time-column">11:30-13:00</td><td class="work">Work Time</td><td class="work">Work Time</td><td class="hike" colspan="1">Congress Hike</td><td class="work">Work Time</td><td class="work">Work Time</td></tr>
+      <tr><td class="time-column">13:00-14:00</td><td class="meal">Lunch</td><td class="meal">Lunch</td><td class="meal">Lunch</td><td class="meal">Lunch</td><td class="meal">Lunch</td></tr>
+      <tr><td class="time-column">14:00-15:00</td><td><strong>Talk:</strong> Alexey Barsukov</td><td><strong>Talk:</strong> Libor Barto</td><td></td><td><strong>Talk:</strong> Sebastian Meyer</td><td><strong>Talk:</strong> Žaneta Semanišinová</td></tr>
+      <tr><td class="time-column">15:30-16:00</td><td class="coffee">Coffee Break</td><td class="coffee">Coffee Break</td><td></td><td class="coffee">Coffee Break</td><td class="coffee">Coffee Break</td></tr>
+      <tr><td class="time-column">16:00-19:00</td><td class="work">Work Time</td><td class="work">Work Time</td><td class="hike" colspan="1">Congress Hike</td><td class="work">Work Time</td><td class="work">Work Time</td></tr>
+      <tr><td class="time-column">19:00-20:30</td><td class="meal">Dinner</td><td class="meal">Dinner</td><td class="meal">Dinner</td><td class="meal">Dinner</td><td class="meal">Dinner</td></tr>
+      <tr><td class="time-column">20:30-21:30</td><td><strong>Tutorial:</strong> Victor Lagerkvist</td><td><strong>Tutorial:</strong> Victor Lagerkvist</td><td></td><td><strong>Tutorial:</strong> Gianluca Tasinato</td><td><strong>Tutorial:</strong> Victor Lagerkvist</td></tr>
+      <tr><td class="time-column">00:00 - open end</td><td><strong>Midnight Talk:</strong> Michał Wrona</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+</div>
+
 
             <!-- Other content (committees, participants) -->
             <div class="item half">
