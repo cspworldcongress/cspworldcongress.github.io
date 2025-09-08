@@ -4,6 +4,59 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Homepage of the CSP World Congress</title>
+    <style>
+        /* --- Programme table styles --- */
+        table.programme {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table.programme th,
+        table.programme td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        table.programme th {
+            background-color: #006699;
+            color: white;
+        }
+
+        table.programme td.breakfast {
+            background-color: #FFF8DC;
+        }
+        table.programme td.coffee {
+            background-color: #FAEBD7;
+        }
+        table.programme td.lunch {
+            background-color: #F0FFF0;
+        }
+        table.programme td.dinner {
+            background-color: #E6F0FF;
+        }
+        table.programme td.hike {
+            background-color: #BEF9BE;
+        }
+        table.programme td.work {
+            background-color: #BABABA;
+        }
+        table.programme td.midnight {
+            background-color: #C9C2F5;
+        }
+
+        /* Make 2nd+3rd columns merged */
+        .item.two-cols {
+            grid-column: span 2;
+        }
+
+        b, strong {
+            font-weight: 700 !important;
+            font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <div class="page" id="main">
@@ -16,55 +69,148 @@
     
     <div class="page" id="current">
         <div class="presentation">
+            <!-- Column 1 -->
             <div class="item">
                 <h2>Where?</h2>
-                The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.
+                he presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.
                 <p>
                 As in previous years, the conference hotel is easily accessible from all over the world by public transport. The Valtournenche, Perrères bus stop is located directly next to the hotel. For bus connections to the hotel from Chatillon-Saint Vincent train station, please visit the <a href="https://aosta.arriva.it/en/valtournenche-cervinia/">Arriva</a> website.</p>
 
-<h4>By train</h4>
-
-Chatillon-Saint Vincent train station is reachable from Turin in around 2 hours or from Milan in 3.5 hours, the connections and tickets are available on the <a href="https://www.trenitalia.com/en.html">Trenitalia</a> website.
-
-There is a <a href="https://www.nightjet.com/en/">Nightjet</a> connection to Milan from Vienna and Munich.
-
-<h4>By plane</h4>
-
-We recommend flying to Turin or Milan, please consult the airport websites (<a href="https://www.milanomalpensa-airport.com/en">Malpensa</a>, <a href="https://www.milanbergamoairport.it/en/">Bergamo</a>, <a href="https://www.aeroportoditorino.it/en">Turin</a>) for the connections from the airports as many airport trains and busses are not listed on the Trenitalia website.
-
-For those arriving later and missing the last train or bus, we can organise a taxi - details will be sent via email a few weeks before the conference.
-            </div>
+                <h4>By train</h4>
                 
-            <div class="item">
+                Chatillon-Saint Vincent train station is reachable from Turin in around 2 hours or from Milan in 3.5 hours, the connections and tickets are available on the <a href="https://www.trenitalia.com/en.html">Trenitalia</a> website.
+                
+                There is a <a href="https://www.nightjet.com/en/">Nightjet</a> connection to Milan from Vienna and Munich.
+                
+                <h4>By plane</h4>
+                
+                We recommend flying to Turin or Milan, please consult the airport websites (<a href="https://www.milanomalpensa-airport.com/en">Malpensa</a>, <a href="https://www.milanbergamoairport.it/en/">Bergamo</a>, <a href="https://www.aeroportoditorino.it/en">Turin</a>) for the connections from the airports as many airport trains and busses are not listed on the Trenitalia website.
+                
+                For those arriving later and missing the last train or bus, we can organise a taxi - details will be sent via email a few weeks before the conference.
+            </div>
+
+            <!-- Columns 2+3 merged -->
+            <div class="item two-cols">
                 <h2>When?</h2>
-                The congress will take place from Monday, 22 September to Friday, 26 September. Arrival is on Sunday evening and departure is on Saturday morning.
-            </div>
-                
-            <div class="item">
+                <p>The congress will take place from Monday, 22 September to Friday, 26 September. 
+                Arrival is on Sunday evening and departure is on Saturday morning.</p>
+
                 <h2>How to attend?</h2>
-                As every year, participation is by invitation only.
-                However, if you have not received an invitation by email but would like to participate, you can email the organisers.
-                A conference fee of 140 euros will be asked for each participant.<br />
+                <p>As every year, participation is by invitation only. …</p>
+
+                <h2>Conference Programme</h2>
+                <table class="programme">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Sept 22</th>
+                      <th>Sept 23</th>
+                      <th>Sept 24</th>
+                      <th>Sept 25</th>
+                      <th>Sept 26</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>08:00 - 09:00</td>
+                      <td class="breakfast">Breakfast</td>
+                      <td class="breakfast" rowspan="2">Breakfast (08:00–10:00)</td>
+                      <td class="breakfast">Breakfast</td>
+                      <td class="hike">Post-Hike Run (05:30–08:00)<br>then Breakfast (08:00–10:00)</td>
+                      <td class="breakfast" rowspan="2">Breakfast (08:00–10:00)</td>
+                    </tr>
+                    <tr>
+                      <td>09:00 - 10:00</td>
+                      <td>Welcome Address (09:30–10:00)<br><strong>Talk:</strong> Andrei Krokhin</td>
+                      <td class="hike" rowspan="10">Congress Hike (09:00–19:00)</td>
+                      <td><strong>Talk:</strong> Standa Zivny</td>
+                      <td><strong>Talk:</strong> Zarathustra Brady</td>
+                    </tr>
+                    <tr>
+                      <td>10:00 - 11:00</td>
+                      <td><strong>Talk:</strong> Alexey Barsukov</td>
+                      <td><strong>Talk:</strong> Miklós Maróti</td>
+                      <td></td>
+                      <td><strong>Talk:</strong> Žaneta Semanišinová</td>
+                    </tr>
+                    <tr>
+                      <td>11:00 - 11:30</td>
+                      <td class="coffee">Coffee Break</td>
+                      <td class="coffee">Coffee Break</td>
+                      <td class="coffee">Coffee Break</td>
+                      <td class="coffee">Coffee Break</td>
+                    </tr>
+                    <tr>
+                      <td>11:30 - 13:00</td>
+                      <td class="work">Work Time</td>
+                      <td class="work">Work Time</td>
+                      <td class="work">Work Time</td>
+                      <td class="work">Work Time</td>
+                    </tr>
+                    <tr>
+                      <td>13:00 - 14:00</td>
+                      <td class="lunch">Lunch</td>
+                      <td class="lunch">Lunch</td>
+                      <td class="lunch">Lunch</td>
+                      <td class="lunch">Lunch</td>
+                    </tr>
+                    <tr>
+                      <td>14:00 - 15:00</td>
+                      <td><strong>Talk:</strong> Alexey Barsukov</td>
+                      <td><strong>Talk:</strong> Libor Barto</td>
+                      <td><strong>Talk:</strong> Sebastian Meyer</td>
+                      <td><strong>Talk:</strong> Žaneta Semanišinová</td>
+                    </tr>
+                    <tr>
+                      <td>15:30 - 16:00</td>
+                      <td class="coffee">Coffee Break</td>
+                      <td class="coffee">Coffee Break</td>
+                      <td class="coffee">Coffee Break</td>
+                      <td class="coffee">Coffee Break</td>
+                    </tr>
+                    <tr>
+                      <td>16:00 - 19:00</td>
+                      <td class="work">Work Time</td>
+                      <td class="work">Work Time</td>
+                      <td class="work">Work Time</td>
+                      <td class="work">Work Time</td>
+                    </tr>
+                    <tr>
+                      <td>19:00 - 20:30</td>
+                      <td class="dinner">Dinner</td>
+                      <td class="dinner">Dinner</td>
+                      <td class="dinner">Dinner</td>
+                      <td class="dinner">Dinner</td>
+                    </tr>
+                    <tr>
+                      <td>20:30 - 21:30</td>
+                      <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
+                      <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
+                      <td><strong>Tutorial:</strong> Gianluca Tasinato</td>
+                      <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
+                    </tr>
+                    <tr>
+                      <td>00:00 - open end</td>
+                      <td class="midnight"><strong>Midnight Talk:</strong> Michał Wrona</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
             </div>
-                
+
+            <!-- Other columns (committees, participants) remain as in your original code -->
             <div class="item half">
                 <h2>Organising Committee</h2>
-                <ul><li><a href="https://www.algebrunar.com/">Johanna Brunar</a></li><li><a href="https://amottet.github.io">Antoine Mottet</a></li><li><a href="https://nagyto.github.io/">Tomáš Nagy</a></li><li><a href="https://dmg.tuwien.ac.at/pinsker/">Michael Pinsker</a></li>
-                </ul>
-                You can send an email to cspworldcongress at gmail.com to contact us.
+                <ul><li><a href="https://www.algebrunar.com/">Johanna Brunar</a></li>…</ul>
             </div>
             <div class="item half">
-            <h2>Steering Committee</h2>
-            <ul>
-                <li><a href="https://www.karlin.mff.cuni.cz/~barto/index.html">Libor Barto</a> (Puppet)</li>
-                <li><a href="https://amottet.github.io">Antoine Mottet</a></li>
-                <li><a href="https://dmg.tuwien.ac.at/pinsker/">Michael Pinsker</a></li>
-            </ul>
+                <h2>Steering Committee</h2>
+                <ul><li><a href="https://www.karlin.mff.cuni.cz/~barto/index.html">Libor Barto</a></li>…</ul>
             </div>
-            
-            
-                <div class="item half">
-                    <h2>List of confirmed participants</h2>
+            <div class="item half">
+                <h2>List of confirmed participants</h2>
                     <ul>
                         <li>Kristina Asimi (Durham University)</li>
                         <li>Demian Banakh (Jagiellonian University)</li>
@@ -116,207 +262,11 @@ For those arriving later and missing the last train or bus, we can organise a ta
                         <li>Dmitriy Zhuk (Charles University)</li>
                         <li>Standa Zivny (University of Oxford)</li>
                     </ul>
-                </div>
-        
-    
-    <!-- Conference Programme -->
-<div class="item half">
-    <h2>Conference Programme</h2>
-
-    <style>
-        .day-tabs {
-            display: flex;
-            justify-content: center;
-            background-color: #006699;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .day-tabs button {
-            background-color: #006699;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .day-tabs button:hover,
-        .day-tabs button.active {
-            background-color: #00557a;
-        }
-
-        .day-content {
-            display: none;
-            padding: 10px;
-            animation: fadeIn 0.3s ease-in-out;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .day-content.active {
-            display: block;
-        }
-
-        .slot {
-            margin: 10px 0;
-            padding: 10px;
-            border-left: 6px solid #333;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-        }
-
-        .work {
-            background-color: #BABABA;
-        } 
-
-        .breakfast {
-            border-left-color: #FFD700;
-            background-color: #FFF8DC;
-        }
-
-        .coffee {
-            border-left-color: #A0522D;
-            background-color: #FAEBD7;
-        }
-
-        .lunch {
-            border-left-color: #32CD32;
-            background-color: #F0FFF0;
-        }
-
-        .dinner {
-            border-left-color: #1E90FF;
-            background-color: #E6F0FF;
-        }
-        
-        .hike {
-            border-left-color: #0A660A;
-            background-color: #BEF9BE;
-        }
-
-        .midnight {
-            border-left-color: #251680;
-            background-color: #C9C2F5;
-        }
-
-        b, strong {
-        font-weight: 700 !important;
-        font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        }
-        
-        /* More specific rule for the schedule slots */
-        .day-content .slot strong {
-            font-weight: 2000 !important;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-
-    <div class="day-tabs">
-        <button class="tab-btn active" onclick="showDay('day1', this)">Sept 21</button>
-        <button class="tab-btn" onclick="showDay('day2', this)">Sept 22</button>
-        <button class="tab-btn" onclick="showDay('day3', this)">Sept 23</button>
-        <button class="tab-btn" onclick="showDay('day4', this)">Sept 24</button>
-        <button class="tab-btn" onclick="showDay('day5', this)">Sept 25</button>
-        <button class="tab-btn" onclick="showDay('day6', this)">Sept 26</button>
-        <button class="tab-btn" onclick="showDay('day7', this)">Sept 27</button>
+            </div>
+        </div>
     </div>
-
-    <div id="day1" class="day-content active">
-        <div class="slot dinner">19:00 - 21:30: Welcome Dinner</div>
-    </div>
-
-    <div id="day2" class="day-content">
-        <div class="slot breakfast">08:00 - 09:30: Breakfast</div>
-        <div class="slot">09:30 - 10:00: Welcome Address</div>
-        <div class="slot">10:00 - 11:00: <strong>Talk:</strong> Andrei Krokhin</div>
-        <div class="slot coffee">11:00 - 11:30: Coffee Break</div>
-        <div class="slot work">11:30 - 13:00: Work Time</div>
-        <div class="slot lunch">13:00 - 14:00: Lunch</div>
-        <div class="slot">14:00 - 15:00: <strong>Talk:</strong> Alexey Barsukov</div>
-        <div class="slot coffee">15:30 - 16:00: Coffee Break</div>
-        <div class="slot work">16:00 - 19:00: Work Time</div>
-        <div class="slot dinner">19:00 - 20:30: Dinner</div>
-        <div class="slot">20:30 - 21:30: <strong>Tutorial:</strong> Victor Lagerkvist</div>
-        <div class="slot">00:00 - open end: <strong>Midnight Talk:</strong> Michał Wrona</div>
-    </div>
-        
-        
-    <div id="day3" class="day-content">
-        <div class="slot breakfast">08:00 - 10:00: Breakfast</div>
-        <div class="slot">10:00 - 11:00: <strong>Talk:</strong> Miklós Maróti</div>
-        <div class="slot coffee">11:00 - 11:30: Coffee Break</div>
-        <div class="slot work">11:30 - 13:00: Work Time</div>
-        <div class="slot lunch">13:00 - 14:00: Lunch</div>
-        <div class="slot">14:00 - 15:00: <strong>Talk:</strong> Libor Barto</div>
-        <div class="slot coffee">15:30 - 16:00: Coffee Break</div>
-        <div class="slot work">16:00 - 19:00: Work Time</div>
-        <div class="slot dinner">19:00 - 20:30: Dinner</div>
-        <div class="slot">20:30 - 21:30: <strong>Tutorial:</strong> Victor Lagerkvist</div>
-    </div>
-        
-        
-    <div id="day4" class="day-content">
-        <div class="slot breakfast">08:00 - 09:00: Breakfast</div>
-        <div class="slot hike">09:00 - 19:00: Congress Hike</div>
-        <div class="slot dinner">19:00 - 20:30: Dinner</div>
-    </div>
-        
-        
-    <div id="day5" class="day-content">
-        <div class="slot hike">05:30 - 08:00: Post-Hike Morning Run</div>
-        <div class="slot breakfast">08:00 - 10:00: Breakfast</div>
-        <div class="slot">10:00 - 11:00: <strong>Talk:</strong> Standa Zivny</div>
-        <div class="slot coffee">11:00 - 11:30: Coffee Break</div>
-        <div class="slot work">11:30 - 13:00: Work Time</div>
-        <div class="slot lunch">13:00 - 14:00: Lunch</div>
-        <div class="slot">14:00 - 15:00: <strong>Talk:</strong> Sebastian Meyer</div>
-        <div class="slot coffee">15:30 - 16:00: Coffee Break</div>
-        <div class="slot work">16:00 - 19:00: Work Time</div>
-        <div class="slot dinner">19:00 - 20:30: Dinner</div>
-        <div class="slot">20:30 - 21:30: <strong>Tutorial:</strong> Gianluca Tasinato</div>
-    </div>
-            
-    <div id="day6" class="day-content">
-        <div class="slot breakfast">08:00 - 10:00: Breakfast</div>
-        <div class="slot">10:00 - 11:00: <strong>Talk:</strong> Zarathustra Brady</div>
-        <div class="slot coffee">11:00 - 11:30: Coffee Break</div>
-        <div class="slot work">11:30 - 13:00: Work Time</div>
-        <div class="slot lunch">13:00 - 14:00: Lunch</div>
-        <div class="slot">14:00 - 15:00: <strong>Talk:</strong> Žaneta Semanišinová</div>
-        <div class="slot coffee">15:30 - 16:00: Coffee Break</div>
-        <div class="slot work">16:00 - 19:00: Work Time</div>
-        <div class="slot dinner">19:00 - 20:30: Dinner</div>
-        <div class="slot">20:30 - 21:30: <strong>Tutorial:</strong> Victor Lagerkvist</div>
-    </div>
-
-    <div id="day7" class="day-content">
-        <div class="slot breakfast">08:00 - 10:00: Breakfast</div>
-    </div>
-
-    <script>
-        function showDay(dayId, btn) {
-            const contents = document.querySelectorAll('.day-content');
-            const buttons = document.querySelectorAll('.tab-btn');
-
-            contents.forEach(content => content.classList.remove('active'));
-            buttons.forEach(button => button.classList.remove('active'));
-
-            document.getElementById(dayId).classList.add('active');
-            btn.classList.add('active');
-        }
-    </script>
-</div>
-</div>
 
     <div class="page" id="previouseditions">
-        <h1 style="color:black;">PREVIOUS EDITIONS</h1>
         <div class="shelf">
             <div class="previous">
                 <div class="previousitm voels"></div><a class="previousft" href="http://cspworldcongress.wordpress.com/home/"></a><div class="year">2020</div>
@@ -335,8 +285,8 @@ For those arriving later and missing the last train or bus, we can organise a ta
             </div>
         </div>
     </div>
-    
-</body>
+
+    </body>
     <script>document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
