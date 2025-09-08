@@ -33,37 +33,33 @@ strong { font-weight: bold; }
     <!-- Column 1: Where? -->
     <div class="item" style="grid-column:1/2;">
         <h2>Where?</h2>
-                The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.
-                <p>
-                As in previous years, the conference hotel is easily accessible from all over the world by public transport. The Valtournenche, Perrères bus stop is located directly next to the hotel. For bus connections to the hotel from Chatillon-Saint Vincent train station, please visit the <a href="https://aosta.arriva.it/en/valtournenche-cervinia/">Arriva</a> website.</p>
-
-<h4>By train</h4>
-
-Chatillon-Saint Vincent train station is reachable from Turin in around 2 hours or from Milan in 3.5 hours, the connections and tickets are available on the <a href="https://www.trenitalia.com/en.html">Trenitalia</a> website.
-
-There is a <a href="https://www.nightjet.com/en/">Nightjet</a> connection to Milan from Vienna and Munich.
-
-<h4>By plane</h4>
-
-We recommend flying to Turin or Milan, please consult the airport websites (<a href="https://www.milanomalpensa-airport.com/en">Malpensa</a>, <a href="https://www.milanbergamoairport.it/en/">Bergamo</a>, <a href="https://www.aeroportoditorino.it/en">Turin</a>) for the connections from the airports as many airport trains and busses are not listed on the Trenitalia website.
-
-For those arriving later and missing the last train or bus, we can organise a taxi - details will be sent via email a few weeks before the conference.
+        <p>The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.</p>
+        <p>As in previous years, the conference hotel is easily accessible from all over the world by public transport. The Valtournenche, Perrères bus stop is located directly next to the hotel. For bus connections to the hotel from Chatillon-Saint Vincent train station, please visit the <a href="https://aosta.arriva.it/en/valtournenche-cervinia/">Arriva</a> website.</p>
+        <h4>By train</h4>
+        <p>Chatillon-Saint Vincent train station is reachable from Turin in around 2 hours or from Milan in 3.5 hours, the connections and tickets are available on the <a href="https://www.trenitalia.com/en.html">Trenitalia</a> website.</p>
+        <p>There is a <a href="https://www.nightjet.com/en/">Nightjet</a> connection to Milan from Vienna and Munich.</p>
+        <h4>By plane</h4>
+        <p>We recommend flying to Turin or Milan, please consult the airport websites (<a href="https://www.milanomalpensa-airport.com/en">Malpensa</a>, <a href="https://www.milanbergamoairport.it/en/">Bergamo</a>, <a href="https://www.aeroportoditorino.it/en">Turin</a>) for the connections from the airports as many airport trains and busses are not listed on the Trenitalia website.</p>
+        <p>For those arriving later and missing the last train or bus, we can organise a taxi - details will be sent via email a few weeks before the conference.</p>
     </div>
 
-    <!-- Column 2: When? -->
-    <div class="item" style="grid-column:2/3;">
-        <h2>When?</h2>
-        <p>The congress will take place from Monday, 22 September to Friday, 26 September. Arrival is on Sunday evening and departure on Saturday morning.</p>
-    </div>
+    <!-- Column 2+3: Nested grid for text + programme -->
+    <div style="grid-column:2/4; display:grid; grid-template-rows:auto auto; gap:20px;">
+        
+        <!-- Top: When? and How to attend? in 2 columns -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div class="item">
+                <h2>When?</h2>
+                <p>The congress will take place from Monday, 22 September to Friday, 26 September. Arrival is on Sunday evening and departure is on Saturday morning.</p>
+            </div>
+            <div class="item">
+                <h2>How to attend?</h2>
+                <p>Participation is by invitation only. A conference fee of 140 euros will be asked for each participant. If you have not received an invitation, you can email the organisers.</p>
+            </div>
+        </div>
 
-    <!-- Column 3: How to attend? -->
-    <div class="item" style="grid-column:3/4;">
-        <h2>How to attend?</h2>
-        <p>Participation is by invitation only. A conference fee of 140 euros will be asked for each participant. If you have not received an invitation, you can email the organisers.</p>
-    </div>
-
-    <!-- Programme table: spans columns 2+3 -->
-    <div class="item full" style="grid-column:2/4;">
+        <!-- Bottom: Conference Programme -->
+        <div class="item full">
         <h2>Conference Programme</h2>
         <table class="programme-table">
             <tr>
