@@ -5,7 +5,19 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Homepage of the CSP World Congress</title>
     <style>
-        /* --- Programme table styles --- */
+        /* Layout grid */
+        .presentation {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* three equal columns */
+            gap: 20px;
+        }
+
+        /* Make programme span col 2+3 */
+        .item.programme-wrapper {
+            grid-column: 2 / span 2;
+        }
+
+        /* Programme table styles */
         table.programme {
             width: 100%;
             border-collapse: collapse;
@@ -47,11 +59,6 @@
             background-color: #C9C2F5;
         }
 
-        /* Make 2nd+3rd columns merged */
-        .item.two-cols {
-            grid-column: span 2;
-        }
-
         b, strong {
             font-weight: 700 !important;
             font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -69,10 +76,10 @@
     
     <div class="page" id="current">
         <div class="presentation">
-            <!-- Column 1 -->
+            <!-- Col 1 -->
             <div class="item">
                 <h2>Where?</h2>
-                he presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.
+                The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.
                 <p>
                 As in previous years, the conference hotel is easily accessible from all over the world by public transport. The Valtournenche, Perrères bus stop is located directly next to the hotel. For bus connections to the hotel from Chatillon-Saint Vincent train station, please visit the <a href="https://aosta.arriva.it/en/valtournenche-cervinia/">Arriva</a> website.</p>
 
@@ -89,15 +96,23 @@
                 For those arriving later and missing the last train or bus, we can organise a taxi - details will be sent via email a few weeks before the conference.
             </div>
 
-            <!-- Columns 2+3 merged -->
-            <div class="item two-cols">
+            <!-- Col 2 -->
+            <div class="item">
                 <h2>When?</h2>
                 <p>The congress will take place from Monday, 22 September to Friday, 26 September. 
                 Arrival is on Sunday evening and departure is on Saturday morning.</p>
+            </div>
 
+            <!-- Col 3 -->
+            <div class="item">
                 <h2>How to attend?</h2>
-                <p>As every year, participation is by invitation only. …</p>
+                <p>As every year, participation is by invitation only. 
+                However, if you have not received an invitation by email but would like to participate, you can email the organisers.
+                A conference fee of 140 euros will be asked for each participant.</p>
+            </div>
 
+            <!-- Programme spanning col 2+3 -->
+            <div class="item programme-wrapper">
                 <h2>Conference Programme</h2>
                 <table class="programme">
                   <thead>
@@ -200,17 +215,25 @@
                 </table>
             </div>
 
-            <!-- Other columns (committees, participants) remain as in your original code -->
+            <!-- Other content (committees, participants) -->
             <div class="item half">
                 <h2>Organising Committee</h2>
-                <ul><li><a href="https://www.algebrunar.com/">Johanna Brunar</a></li>…</ul>
+                <ul><li><a href="https://www.algebrunar.com/">Johanna Brunar</a></li><li><a href="https://amottet.github.io">Antoine Mottet</a></li><li><a href="https://nagyto.github.io/">Tomáš Nagy</a></li><li><a href="https://dmg.tuwien.ac.at/pinsker/">Michael Pinsker</a></li>
+                </ul>
+                You can send an email to cspworldcongress at gmail.com to contact us.
             </div>
             <div class="item half">
-                <h2>Steering Committee</h2>
-                <ul><li><a href="https://www.karlin.mff.cuni.cz/~barto/index.html">Libor Barto</a></li>…</ul>
+            <h2>Steering Committee</h2>
+            <ul>
+                <li><a href="https://www.karlin.mff.cuni.cz/~barto/index.html">Libor Barto</a> (Puppet)</li>
+                <li><a href="https://amottet.github.io">Antoine Mottet</a></li>
+                <li><a href="https://dmg.tuwien.ac.at/pinsker/">Michael Pinsker</a></li>
+            </ul>
             </div>
-            <div class="item half">
-                <h2>List of confirmed participants</h2>
+            
+            
+                <div class="item half">
+                    <h2>List of confirmed participants</h2>
                     <ul>
                         <li>Kristina Asimi (Durham University)</li>
                         <li>Demian Banakh (Jagiellonian University)</li>
@@ -262,11 +285,10 @@
                         <li>Dmitriy Zhuk (Charles University)</li>
                         <li>Standa Zivny (University of Oxford)</li>
                     </ul>
-            </div>
-        </div>
-    </div>
+                </div>
 
     <div class="page" id="previouseditions">
+        <h1 style="color:black;">PREVIOUS EDITIONS</h1>
         <div class="shelf">
             <div class="previous">
                 <div class="previousitm voels"></div><a class="previousft" href="http://cspworldcongress.wordpress.com/home/"></a><div class="year">2020</div>
@@ -286,28 +308,25 @@
         </div>
     </div>
 
-    </body>
-    <script>document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        window.addEventListener("scroll", function() {
+            const offset = window.pageYOffset;
+            document.querySelectorAll('.thisyear').forEach(el => {
+                el.style.backgroundPositionY = 0.7*offset + "px";
+            });
+            document.querySelectorAll('.chgbg').forEach(el => {
+                el.style.opacity = (1*window.innerHeight-offset)/window.innerHeight;
+            });
         });
-    });
-});
-    
-    window.addEventListener("scroll", function() {
-  const offset = window.pageYOffset;
-  const elements = document.querySelectorAll('.thisyear');
-   elements.forEach((element) => {
-            element.style.backgroundPositionY = 0.7*offset + "px";
-        });
-        
-    const elementsOp = document.querySelectorAll('.chgbg');
-    elementsOp.forEach((element) => {
-         element.style.opacity = (1*window.innerHeight-offset)/window.innerHeight;   
-    });
-    });
     </script>
+</body>
 </html>
