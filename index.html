@@ -226,6 +226,48 @@ strong { font-weight: bold; }
     </div>
 </div>
  </div>
-
+<div class="page" id="previouseditions">
+        <h1 style="color:black;">PREVIOUS EDITIONS</h1>
+        <div class="shelf">
+            <div class="previous">
+                <div class="previousitm voels"></div><a class="previousft" href="http://cspworldcongress.wordpress.com/home/"></a><div class="year">2020</div>
+            </div>
+            <div class="previous">
+                <div class="previousitm kranjska"></div><a class="previousft" href="http://cspworldcongress.wordpress.com"></a><div class="year">2021</div>
+            </div>
+            <div class="previous">
+                <div class="molveno previousitm"></div><a class="previousft" href="http://cwc.csp-seminar.org"></a><div class="year">2022</div>
+            </div>
+            <div class="previous">
+                <div class="weissensee previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2023/"></a><div class="year">2023</div>
+            </div>
+            <div class="previous">
+              <div class="colfosco previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2024/"></a><div class="year">2024</div>
+            </div>
+        </div>
+    </div>
 </body>
+    <script>document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+    
+    window.addEventListener("scroll", function() {
+  const offset = window.pageYOffset;
+  const elements = document.querySelectorAll('.thisyear');
+   elements.forEach((element) => {
+            element.style.backgroundPositionY = 0.7*offset + "px";
+        });
+        
+    const elementsOp = document.querySelectorAll('.chgbg');
+    elementsOp.forEach((element) => {
+         element.style.opacity = (1*window.innerHeight-offset)/window.innerHeight;   
+    });
+    });
+    </script>
 </html>
