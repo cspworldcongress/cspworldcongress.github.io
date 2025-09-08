@@ -1,236 +1,314 @@
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <title>Homepage of the CSP World Congress</title>
-</head>
-
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<title>Homepage of the CSP World Congress</title>
 <style>
-.presentation-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  grid-template-rows:auto auto;
-  gap:20px;
-  padding:20px;
+body {
+    font-family: 'Montserrat', sans-serif;
 }
-
-/* Column 1 (Where?) occupies both rows */
-.col1 { grid-column:1; grid-row:1 / span 2; }
-
-/* Columns 2 and 3 text */
-.col2 { grid-column:2; grid-row:1; }
-.col3 { grid-column:3; grid-row:1; }
-
-/* Programme table spanning columns 2+3 below text */
-.programme { grid-column:2 / span 2; grid-row:2; }
-
-h2 { margin-top:0; }
-
-table { border-collapse: collapse; width:100%; position:relative; }
-th, td { border:1px solid #ccc; text-align:center; padding:5px; font-size:14px; }
-th { background:#eee; }
-
-/* Timeline column style */
-.time-column { width:80px; background:#f0f0f0; position:relative; }
-.time-column::before {
-  content:"";
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:40px;
-  width:2px;
-  background:#999;
+.page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
 }
-
-.meal { background:#FFF8DC; }
-.coffee { background:#FAEBD7; }
-.work { background:#BABABA; }
-.hike { background:#BEF9BE; }
-
-strong { font-weight:700; }
+.presentation {
+    display: contents; /* so the items can occupy the grid directly */
+}
+.item {
+    margin-bottom: 20px;
+}
+.item.full {
+    grid-column: 2 / 4;
+}
+.item.half {
+    width: 100%;
+}
+ul {
+    padding-left: 20px;
+}
+.programme-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.programme-table th,
+.programme-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+.time-column {
+    background-color: #f0f0f0;
+    border-right: none; /* remove vertical line inside time column */
+    font-weight: bold;
+}
+.meal {
+    background-color: #FFD700; /* same color for breakfast, lunch, dinner */
+}
+.coffee {
+    background-color: #FAEBD7;
+}
+.work {
+    background-color: #BABABA;
+}
+.hike {
+    background-color: #BEF9BE;
+}
+strong {
+    font-weight: bold;
+}
 </style>
 </head>
 <body>
-    <body>
-    <div class="page" id="main">
-        <div class="topbar">
-            <span class="topbaritem"><a href="#current" style="text-decoration: none; color: inherit;">CWC 2025</a></span>
-            <span class="topbaritem"><a href="#previouseditions" style="text-decoration: none; color: inherit;">PREVIOUS EDITIONS</a></span>
-        </div>
-        <div class="thisyear"></div>
+<div class="page" id="main">
+    <div class="topbar">
+        <span class="topbaritem"><a href="#current" style="text-decoration:none;color:inherit;">CWC 2025</a></span>
+        <span class="topbaritem"><a href="#previouseditions" style="text-decoration:none;color:inherit;">PREVIOUS EDITIONS</a></span>
     </div>
+    <div class="thisyear"></div>
+</div>
 
-<div class="presentation-grid">
+<div class="page" id="current">
+    <div class="presentation">
+        <!-- Column 1 -->
+        <div class="item" style="grid-column: 1 / 2;">
+            <h2>Where?</h2>
+            The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.
+            <p>As in previous years, the conference hotel is easily accessible from all over the world by public transport. The Valtournenche, Perrères bus stop is located directly next to the hotel. For bus connections to the hotel from Chatillon-Saint Vincent train station, please visit the <a href="https://aosta.arriva.it/en/valtournenche-cervinia/">Arriva</a> website.</p>
 
-  <!-- Column 1: Where? -->
-  <div class="col1">
-    <h2>Where?</h2>
-    <p>The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.</p>
-    <p>As in previous years, the conference hotel is easily accessible from all over the world by public transport. The Valtournenche, Perrères bus stop is located directly next to the hotel. For bus connections to the hotel from Chatillon-Saint Vincent train station, please visit the <a href="https://aosta.arriva.it/en/valtournenche-cervinia/">Arriva</a> website.</p>
+            <h4>By train</h4>
+            Chatillon-Saint Vincent train station is reachable from Turin in around 2 hours or from Milan in 3.5 hours, the connections and tickets are available on the <a href="https://www.trenitalia.com/en.html">Trenitalia</a> website.
+            <p>There is a <a href="https://www.nightjet.com/en/">Nightjet</a> connection to Milan from Vienna and Munich.</p>
 
-    <h4>By train</h4>
-    <p>Chatillon-Saint Vincent train station is reachable from Turin in around 2 hours or from Milan in 3.5 hours, the connections and tickets are available on the <a href="https://www.trenitalia.com/en.html">Trenitalia</a> website. There is a <a href="https://www.nightjet.com/en/">Nightjet</a> connection to Milan from Vienna and Munich.</p>
+            <h4>By plane</h4>
+            We recommend flying to Turin or Milan, please consult the airport websites (<a href="https://www.milanomalpensa-airport.com/en">Malpensa</a>, <a href="https://www.milanbergamoairport.it/en/">Bergamo</a>, <a href="https://www.aeroportoditorino.it/en">Turin</a>) for the connections from the airports as many airport trains and busses are not listed on the Trenitalia website.
+            <p>For those arriving later and missing the last train or bus, we can organise a taxi - details will be sent via email a few weeks before the conference.</p>
+        </div>
 
-    <h4>By plane</h4>
-    <p>We recommend flying to Turin or Milan, please consult the airport websites (<a href="https://www.milanomalpensa-airport.com/en">Malpensa</a>, <a href="https://www.milanbergamoairport.it/en/">Bergamo</a>, <a href="https://www.aeroportoditorino.it/en">Turin</a>) for connections from the airports. Taxi info will be sent via email for late arrivals.</p>
-  </div>
+        <!-- Column 2 -->
+        <div class="item" style="grid-column: 2 / 3;">
+            <h2>When?</h2>
+            The congress will take place from Monday, 22 September to Friday, 26 September. Arrival is on Sunday evening and departure is on Saturday morning.
+        </div>
 
-  <!-- Column 2: When? -->
-  <div class="col2">
-    <h2>When?</h2>
-    <p>The congress will take place from Monday, 22 September to Friday, 26 September. Arrival is on Sunday evening and departure on Saturday morning.</p>
-  </div>
+        <!-- Column 3 -->
+        <div class="item" style="grid-column: 3 / 4;">
+            <h2>How to attend?</h2>
+            As every year, participation is by invitation only.
+            However, if you have not received an invitation by email but would like to participate, you can email the organisers.
+            A conference fee of 140 euros will be asked for each participant.<br />
+        </div>
 
-  <!-- Column 3: How to attend? -->
-  <div class="col3">
-    <h2>How to attend?</h2>
-    <p>Participation is by invitation only. If you have not received an invitation but would like to participate, please email the organisers. A conference fee of 140 euros applies per participant.</p>
-  </div>
+        <!-- Programme Table spanning columns 2+3, immediately below "When?" and "How to attend?" -->
+        <div class="item full">
+            <h2>Conference Programme</h2>
+            <table class="programme-table">
+                <thead>
+                    <tr>
+                        <th class="time-column">Time</th>
+                        <th>Monday 22</th>
+                        <th>Tuesday 23</th>
+                        <th>Wednesday 24</th>
+                        <th>Thursday 25</th>
+                        <th>Friday 26</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-column">05:30 - 08:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><span class="hike">Post-Hike Morning Run</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">08:00 - 09:00</td>
+                        <td><span class="meal">Breakfast</span></td>
+                        <td><span class="meal">Breakfast</span></td>
+                        <td><span class="meal">Breakfast</span></td>
+                        <td><span class="meal">Breakfast</span></td>
+                        <td><span class="meal">Breakfast</span></td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">09:00 - 09:30</td>
+                        <td></td>
+                        <td></td>
+                        <td rowspan="10"><span class="hike">Congress Hike</span></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">09:30 - 10:00</td>
+                        <td>Welcome Address</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">10:00 - 11:00</td>
+                        <td><strong>Talk:</strong> Andrei Krokhin</td>
+                        <td><strong>Talk:</strong> Miklós Maróti</td>
+                        <td></td>
+                        <td><strong>Talk:</strong> Standa Zivny</td>
+                        <td><strong>Talk:</strong> Zarathustra Brady</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">11:00 - 11:30</td>
+                        <td class="coffee">Coffee Break</td>
+                        <td class="coffee">Coffee Break</td>
+                        <td></td>
+                        <td class="coffee">Coffee Break</td>
+                        <td class="coffee">Coffee Break</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">11:30 - 13:00</td>
+                        <td class="work">Work Time</td>
+                        <td class="work">Work Time</td>
+                        <td></td>
+                        <td class="work">Work Time</td>
+                        <td class="work">Work Time</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">13:00 - 14:00</td>
+                        <td class="meal">Lunch</td>
+                        <td class="meal">Lunch</td>
+                        <td></td>
+                        <td class="meal">Lunch</td>
+                        <td class="meal">Lunch</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">14:00 - 15:00</td>
+                        <td><strong>Talk:</strong> Alexey Barsukov</td>
+                        <td><strong>Talk:</strong> Libor Barto</td>
+                        <td></td>
+                        <td><strong>Talk:</strong> Sebastian Meyer</td>
+                        <td><strong>Talk:</strong> Žaneta Semanišinová</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">15:30 - 16:00</td>
+                        <td class="coffee">Coffee Break</td>
+                        <td class="coffee">Coffee Break</td>
+                        <td></td>
+                        <td class="coffee">Coffee Break</td>
+                        <td class="coffee">Coffee Break</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">16:00 - 19:00</td>
+                        <td class="work">Work Time</td>
+                        <td class="work">Work Time</td>
+                        <td></td>
+                        <td class="work">Work Time</td>
+                        <td class="work">Work Time</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">19:00 - 20:30</td>
+                        <td class="meal">Dinner</td>
+                        <td class="meal">Dinner</td>
+                        <td></td>
+                        <td class="meal">Dinner</td>
+                        <td class="meal">Dinner</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">20:30 - 21:30</td>
+                        <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
+                        <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
+                        <td></td>
+                        <td><strong>Tutorial:</strong> Gianluca Tasinato</td>
+                        <td><strong>Tutorial:</strong> Victor Lagerkvist</td>
+                    </tr>
+                    <tr>
+                        <td class="time-column">00:00 - open end</td>
+                        <td><strong>Midnight Talk:</strong> Michał Wrona</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-  <!-- Programme table spanning columns 2+3 below text -->
-  <div class="programme">
-    <h2>Conference Programme</h2>
-    <table>
-      <tr>
-        <th>Time</th>
-        <th>Monday 22</th>
-        <th>Tuesday 23</th>
-        <th>Wednesday 24</th>
-        <th>Thursday 25</th>
-        <th>Friday 26</th>
-      </tr>
-      <tr><td class="time-column">05:30-08:00</td><td></td><td></td><td></td><td class="work">Post-Hike Morning Run</td><td></td></tr>
-      <tr><td class="time-column">08:00-09:00</td><td class="meal">Breakfast</td><td class="meal">Breakfast</td><td class="meal"></td><td class="meal">Breakfast</td><td class="meal">Breakfast</td></tr>
-      <tr><td class="time-column">09:00-09:30</td><td></td><td class="meal">Breakfast</td><td class="hike" colspan="1">Congress Hike</td><td></td><td></td></tr>
-      <tr><td class="time-column">09:30-10:00</td><td></td><td></td><td class="hike" colspan="1">Congress Hike</td><td></td><td></td></tr>
-      <tr><td class="time-column">10:00-11:00</td><td><strong>Talk:</strong> Andrei Krokhin</td><td><strong>Talk:</strong> Miklós Maróti</td><td></td><td><strong>Talk:</strong> Standa Zivny</td><td><strong>Talk:</strong> Zarathustra Brady</td></tr>
-      <tr><td class="time-column">11:00-11:30</td><td class="coffee">Coffee Break</td><td class="coffee">Coffee Break</td><td class="hike" colspan="1">Congress Hike</td><td class="coffee">Coffee Break</td><td class="coffee">Coffee Break</td></tr>
-      <tr><td class="time-column">11:30-13:00</td><td class="work">Work Time</td><td class="work">Work Time</td><td class="hike" colspan="1">Congress Hike</td><td class="work">Work Time</td><td class="work">Work Time</td></tr>
-      <tr><td class="time-column">13:00-14:00</td><td class="meal">Lunch</td><td class="meal">Lunch</td><td class="meal">Lunch</td><td class="meal">Lunch</td><td class="meal">Lunch</td></tr>
-      <tr><td class="time-column">14:00-15:00</td><td><strong>Talk:</strong> Alexey Barsukov</td><td><strong>Talk:</strong> Libor Barto</td><td></td><td><strong>Talk:</strong> Sebastian Meyer</td><td><strong>Talk:</strong> Žaneta Semanišinová</td></tr>
-      <tr><td class="time-column">15:30-16:00</td><td class="coffee">Coffee Break</td><td class="coffee">Coffee Break</td><td></td><td class="coffee">Coffee Break</td><td class="coffee">Coffee Break</td></tr>
-      <tr><td class="time-column">16:00-19:00</td><td class="work">Work Time</td><td class="work">Work Time</td><td class="hike" colspan="1">Congress Hike</td><td class="work">Work Time</td><td class="work">Work Time</td></tr>
-      <tr><td class="time-column">19:00-20:30</td><td class="meal">Dinner</td><td class="meal">Dinner</td><td class="meal">Dinner</td><td class="meal">Dinner</td><td class="meal">Dinner</td></tr>
-      <tr><td class="time-column">20:30-21:30</td><td><strong>Tutorial:</strong> Victor Lagerkvist</td><td><strong>Tutorial:</strong> Victor Lagerkvist</td><td></td><td><strong>Tutorial:</strong> Gianluca Tasinato</td><td><strong>Tutorial:</strong> Victor Lagerkvist</td></tr>
-      <tr><td class="time-column">00:00 - open end</td><td><strong>Midnight Talk:</strong> Michał Wrona</td><td></td><td></td><td></td><td></td></tr>
-    </table>
-  </div>
+        <!-- Organising and Steering Committees (two columns) -->
+        <div class="item half">
+            <h2>Organising Committee</h2>
+            <ul>
+                <li><a href="https://www.algebrunar.com/">Johanna Brunar</a></li>
+                <li><a href="https://amottet.github.io">Antoine Mottet</a></li>
+                <li><a href="https://nagyto.github.io/">Tomáš Nagy</a></li>
+                <li><a href="https://dmg.tuwien.ac.at/pinsker/">Michael Pinsker</a></li>
+            </ul>
+            You can send an email to cspworldcongress at gmail.com to contact us.
+        </div>
 
-
-
-            <!-- Other content (committees, participants) -->
-            <div class="item half">
-                <h2>Organising Committee</h2>
-                <ul><li><a href="https://www.algebrunar.com/">Johanna Brunar</a></li><li><a href="https://amottet.github.io">Antoine Mottet</a></li><li><a href="https://nagyto.github.io/">Tomáš Nagy</a></li><li><a href="https://dmg.tuwien.ac.at/pinsker/">Michael Pinsker</a></li>
-                </ul>
-                You can send an email to cspworldcongress at gmail.com to contact us.
-            </div>
-            <div class="item half">
+        <div class="item half">
             <h2>Steering Committee</h2>
             <ul>
                 <li><a href="https://www.karlin.mff.cuni.cz/~barto/index.html">Libor Barto</a> (Puppet)</li>
                 <li><a href="https://amottet.github.io">Antoine Mottet</a></li>
                 <li><a href="https://dmg.tuwien.ac.at/pinsker/">Michael Pinsker</a></li>
             </ul>
-            </div>
-            
-            
-                <div class="item half">
-                    <h2>List of confirmed participants</h2>
-                    <ul>
-                        <li>Kristina Asimi (Durham University)</li>
-                        <li>Demian Banakh (Jagiellonian University)</li>
-                        <li>Alexey Barsukov (Charles University)</li>
-                        <li>Libor Barto (Charles University)</li>
-                        <li>Manuel Bodirsky (TU Dresden)</li>
-                        <li>Bertalan Bodor (TU Wien)</li>
-                        <li>Jan Bok (Charles University)</li>
-                        <li>Zarathustra Brady (Free spirit)</li>
-                        <li>Johanna Beate Brunar (TU Wien)</li>
-                        <li>Lorenzo Ciardo (TU Graz)</li>
-                        <li>Leonid Dorochko (Jagiellonian University)</li>
-                        <li>Roman Feller (TU Wien)</li>
-                        <li>Marek Filakovský (Masaryk university)</li>
-                        <li>Philipp Alexander Grzywaczyk (TU Dresden)</li>
-                        <li>Santiago Guzman Pro (TU Dresden)</li>
-                        <li>Maximilian Hadek (Charles University)</li>
-                        <li>Nikola Jedličková (Charles University)</li>
-                        <li>Gideo Joubert (Hamburg University of Technology)</li>
-                        <li>Leopold Karl (TU Wien)</li>
-                        <li>Piotr Kawalek (TU Wien)</li>
-                        <li>Michael Kompatscher (Charles University)</li>
-                        <li>Matěj Konečný (TU Dresden)</li>
-                        <li>Andrei Krokhin (Durham University)</li>
-                        <li>Victor Lagerkvist (Linköping university)</li>
-                        <li>Paolo Marimon (TU Wien)</li>
-                        <li>Miklós Maróti (University of Szeged)</li>
-                        <li>Barnaby Martin (Durham University)</li>
-                        <li>Sebastian Meyer (TU Dresden)</li>
-                        <li>Andrew Moorhead (TU Dresden)</li>
-                        <li>Antoine Mottet (Hamburg University of Technology)</li>
-                        <li>Tomas Nagy (Jagiellonian University)</li>
-                        <li>Radek Olšák (Charles University)</li>
-                        <li>Benedikt Pago (University of Cambridge)</li>
-                        <li>Davide Perinti (Hamburg University of Technology)</li>
-                        <li>Lukas Pieper (Charles University)</li>
-                        <li>Michael Pinsker (TU Wien)</li>
-                        <li>Jakub Rydval (TU Wien)</li>
-                        <li>Moritz Albert Schöbi (TU Wien)</li>
-                        <li>Žaneta Semanišinová (TU Dresden)</li>
-                        <li>Michel Sénégas (Hamburg University of Technology)</li>
-                        <li>Christoph Spiess (TU Wien)</li>
-                        <li>Florian Starke (TU Dresden)</li>
-                        <li>Gianluca Tasinato (Institute of Science and Technology Austria)</li>
-                        <li>Danny Vagnozzi (Durham University)</li>
-                        <li>Paul Winkler (TU Dresden)</li>
-                        <li>Michał Wrona (Jagiellonian University)</li>
-                        <li>Peter Zeman (Charles University)</li>
-                        <li>Dmitriy Zhuk (Charles University)</li>
-                        <li>Standa Zivny (University of Oxford)</li>
-                    </ul>
-                </div>
-    </div>
+        </div>
 
-    <div class="page" id="previouseditions">
-        <h1 style="color:black;">PREVIOUS EDITIONS</h1>
-        <div class="shelf">
-            <div class="previous">
-                <div class="previousitm voels"></div><a class="previousft" href="http://cspworldcongress.wordpress.com/home/"></a><div class="year">2020</div>
-            </div>
-            <div class="previous">
-                <div class="previousitm kranjska"></div><a class="previousft" href="http://cspworldcongress.wordpress.com"></a><div class="year">2021</div>
-            </div>
-            <div class="previous">
-                <div class="molveno previousitm"></div><a class="previousft" href="http://cwc.csp-seminar.org"></a><div class="year">2022</div>
-            </div>
-            <div class="previous">
-                <div class="weissensee previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2023/"></a><div class="year">2023</div>
-            </div>
-            <div class="previous">
-              <div class="colfosco previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2024/"></a><div class="year">2024</div>
-            </div>
+        <!-- List of confirmed participants -->
+        <div class="item full">
+            <h2>List of confirmed participants</h2>
+            <ul>
+                <li>Kristina Asimi (Durham University)</li>
+                <li>Demian Banakh (Jagiellonian University)</li>
+                <li>Alexey Barsukov (Charles University)</li>
+                <li>Libor Barto (Charles University)</li>
+                <li>Manuel Bodirsky (TU Dresden)</li>
+                <li>Bertalan Bodor (TU Wien)</li>
+                <li>Jan Bok (Charles University)</li>
+                <li>Zarathustra Brady (Free spirit)</li>
+                <li>Johanna Beate Brunar (TU Wien)</li>
+                <li>Lorenzo Ciardo (TU Graz)</li>
+                <li>Leonid Dorochko (Jagiellonian University)</li>
+                <li>Roman Feller (TU Wien)</li>
+                <li>Marek Filakovský (Masaryk university)</li>
+                <li>Philipp Alexander Grzywaczyk (TU Dresden)</li>
+                <li>Santiago Guzman Pro (TU Dresden)</li>
+                <li>Maximilian Hadek (Charles University)</li>
+                <li>Nikola Jedličková (Charles University)</li>
+                <li>Gideo Joubert (Hamburg University of Technology)</li>
+                <li>Leopold Karl (TU Wien)</li>
+                <li>Piotr Kawalek (TU Wien)</li>
+                <li>Michael Kompatscher (Charles University)</li>
+                <li>Matěj Konečný (TU Dresden)</li>
+                <li>Andrei Krokhin (Durham University)</li>
+                <li>Victor Lagerkvist (Linköping university)</li>
+                <li>Paolo Marimon (TU Wien)</li>
+                <li>Miklós Maróti (University of Szeged)</li>
+                <li>Barnaby Martin (Durham University)</li>
+                <li>Sebastian Meyer (TU Dresden)</li>
+                <li>Andrew Moorhead (TU Dresden)</li>
+                <li>Antoine Mottet (Hamburg University of Technology)</li>
+                <li>Tomas Nagy (Jagiellonian University)</li>
+                <li>Radek Olšák (Charles University)</li>
+                <li>Benedikt Pago (University of Cambridge)</li>
+                <li>Davide Perinti (Hamburg University of Technology)</li>
+                <li>Lukas Pieper (Charles University)</li>
+                <li>Michael Pinsker (TU Wien)</li>
+                <li>Jakub Rydval (TU Wien)</li>
+                <li>Moritz Albert Schöbi (TU Wien)</li>
+                <li>Žaneta Semanišinová (TU Dresden)</li>
+                <li>Michel Sénégas (Hamburg University of Technology)</li>
+                <li>Christoph Spiess (TU Wien)</li>
+                <li>Florian Starke (TU Dresden)</li>
+                <li>Gianluca Tasinato (Institute of Science and Technology Austria)</li>
+                <li>Danny Vagnozzi (Durham University)</li>
+                <li>Paul Winkler (TU Dresden)</li>
+                <li>Michał Wrona (Jagiellonian University)</li>
+                <li>Peter Zeman (Charles University)</li>
+                <li>Dmitriy Zhuk (Charles University)</li>
+                <li>Standa Zivny (University of Oxford)</li>
+            </ul>
         </div>
     </div>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        window.addEventListener("scroll", function() {
-            const offset = window.pageYOffset;
-            document.querySelectorAll('.thisyear').forEach(el => {
-                el.style.backgroundPositionY = 0.7*offset + "px";
-            });
-            document.querySelectorAll('.chgbg').forEach(el => {
-                el.style.opacity = (1*window.innerHeight-offset)/window.innerHeight;
-            });
-        });
-    </script>
+</div>
 </body>
 </html>
