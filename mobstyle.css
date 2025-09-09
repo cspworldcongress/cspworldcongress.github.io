@@ -334,3 +334,91 @@ body.subpage {
 .filter-buttons button:last-child:hover {
   background-color: #a8d8eb;
 }
+
+#previouseditions {
+    height: 90vh;   
+}
+
+
+
+.shelf {
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height:100%;
+}
+
+.previous {
+    flex-grow: 1;
+    vertical-align: middle;
+    padding-left: 100px;
+    column-gap: 0px;
+    padding: 0px;
+    position:relative;
+    height:50%;
+    width:50%;
+}
+
+.previousft {
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 2;
+}
+
+.previousitm {
+    height: 100%;
+    width: 100%;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.year {
+    position: absolute;
+    font-weight: bolder;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-25%);
+}
+
+.voels {
+    background-image: url("schlern-small-32.jpg");
+    
+}
+
+.kranjska {
+    background-image: url("triglav-small-32.jpg");
+ 
+}
+
+.molveno {
+    background-image: url("molveno-small-32.jpg");
+}
+
+.weissensee {
+    background-image: url("weissensee-small-32.jpg");
+}
+
+.colfosco {
+    background-image: url("colfosco.jpg");
+}
+
+.thisyear  {
+    background-image: url("cervinia.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    /*top: -110vh;*/
+    top: 0vh;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
