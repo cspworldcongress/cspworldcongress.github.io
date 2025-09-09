@@ -342,20 +342,35 @@ body.subpage {
 
 
 .shelf {
-    position: relative;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height:100%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 }
 
 .previous {
-    flex-grow: 1;
-    padding: 0;          /* no padding */
-    margin: 0;           /* no margin */
-    position: relative;
-    height: 50%;
-    width: 50%;
+  flex: 1 0 50%;   /* 2 columns on larger screens */
+  height: 50%;     /* rows fill evenly */
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.previousitm {
+  width: 100%;
+  height: 100%;
+  background-size: cover;    /* cover ensures no stripes */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Responsive: stack tiles vertically on mobile */
+@media (max-width: 768px) {
+  .previous {
+    flex: 1 0 100%;  /* full width */
+    height: auto;    /* let height follow content */
+    aspect-ratio: 16/9; /* keep nice shape (optional) */
+  }
 }
 
 
@@ -376,14 +391,29 @@ body.subpage {
 }
 
 .year {
-    position: absolute;
-    font-weight: bolder;
-    font-size: 50px;
-    color: white;
-    text-align: center;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-25%);
+  position: absolute;
+  font-weight: bolder;
+  font-size: 3vw;        /* scales with screen width */
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* better contrast */
+  pointer-events: none;  /* avoid interfering with link clicks */
+}
+
+/* Fine-tune for very small screens */
+@media (max-width: 768px) {
+  .year {
+    font-size: 8vw;   /* larger relative size on phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .year {
+    font-size: 10vw;  /* even bigger on very small screens */
+  }
 }
 
 .voels {
