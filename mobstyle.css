@@ -351,14 +351,13 @@ body.subpage {
 
 .previous {
     flex-grow: 1;
-    vertical-align: middle;
-    padding-left: 100px;
-    column-gap: 0px;
-    padding: 0px;
-    position:relative;
-    height:50%;
-    width:50%;
+    padding: 0;          /* no padding */
+    margin: 0;           /* no margin */
+    position: relative;
+    height: 50%;
+    width: 50%;
 }
+
 
 .previousft {
     position:absolute;
