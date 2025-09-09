@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="menu.js" defer></script>
+  <script>
+    // Filter function to show all or only talks
+    function filterEvents(type) {
+      const events = document.querySelectorAll('.event');
+      events.forEach(event => {
+        if (type === 'all') {
+          event.style.display = 'flex';
+        } else {
+          event.style.display = event.classList.contains(type) ? 'flex' : 'none';
+        }
+      });
+    }
+  </script>
+</head>
+<body class="subpage">
+
+<nav class="navbar subpage">
+  <div class="menu-toggle">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="where.html">How to get there</a></li>
+    <li><a href="organisers.html">Organisers</a></li>
+    <li><a href="participants.html">Participants</a></li>
+    <li><a href="programme.html">Programme</a></li>
+  </ul>
+</nav>
+<div class="menu-overlay" id="menu-overlay"></div>
+
+<div class="content programme">
+  <h1>Conference Programme</h1>
+
+  <!-- Filter buttons -->
+  <div class="filter-buttons">
+    <button onclick="filterEvents('all')">Show All</button>
+    <button onclick="filterEvents('talk')">Talks Only</button>
+  </div>
+
+  <!-- Sunday -->
+  <div class="day" id="day-sunday">
+    <h2>Sunday</h2>
+    <div class="event meal">
+      <span class="time">19:00-21:30</span>
+      <span class="activity">Dinner</span>
+    </div>
+  </div>
+
+  <!-- Monday -->
+  <div class="day" id="day-monday">
+    <h2>Monday</h2>
+    <div class="event meal">
+      <span class="time">07:30-09:30</span>
+      <span class="activity">Breakfast</span>
+    </div>
+    <div class="event talk">
+      <span class="time">09:30-10:00</span>
+      <span class="activity">Welcome Address</span>
+    </div>
+    <div class="event talk">
+      <span class="time">10:00-11:00</span>
+      <span class="activity"><b>Talk:</b> Andrei Krokhin</span>
+    </div>
+    <div class="event coffee">
+      <span class="time">11:00-11:30</span>
+      <span class="activity">Coffee Break</span>
+    </div>
+    <div class="event work">
+      <span class="time">11:30-13:00</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event meal">
+      <span class="time">13:00-14:00</span>
+      <span class="activity">Lunch</span>
+    </div>
+    <div class="event talk">
+      <span class="time">14:00-15:00</span>
+      <span class="activity"><b>Talk:</b> Alexey Barsukov</span>
+    </div>
+    <div class="event work">
+      <span class="time">15:00-16:00</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event coffee">
+      <span class="time">16:00-16:30</span>
+      <span class="activity">Coffee Break</span>
+    </div>
+    <div class="event work">
+      <span class="time">16:30-18:30</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event meal">
+      <span class="time">18:30-20:00</span>
+      <span class="activity">Dinner</span>
+    </div>
+    <div class="event talk">
+      <span class="time">20:00-21:00</span>
+      <span class="activity"><b>Tutorial:</b> Victor Lagerkvist</span>
+    </div>
+    <div class="event talk">
+      <span class="time">00:00-???</span>
+      <span class="activity"><b>Midnight Talk:</b> Michał Wrona</span>
+    </div>
+  </div>
+
+  <!-- Tuesday -->
+  <div class="day" id="day-monday">
+    <h2>Tuesday</h2>
+    <div class="event meal">
+      <span class="time">07:30-10:00</span>
+      <span class="activity">Breakfast</span>
+    </div>
+    <div class="event talk">
+      <span class="time">10:00-11:00</span>
+      <span class="activity"><b>Talk:</b> Miklós Maróti</span>
+    </div>
+    <div class="event coffee">
+      <span class="time">11:00-11:30</span>
+      <span class="activity">Coffee Break</span>
+    </div>
+    <div class="event work">
+      <span class="time">11:30-13:00</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event meal">
+      <span class="time">13:00-14:00</span>
+      <span class="activity">Lunch</span>
+    </div>
+    <div class="event talk">
+      <span class="time">14:00-15:00</span>
+      <span class="activity"><b>Talk:</b> Libor Barto</span>
+    </div>
+    <div class="event work">
+      <span class="time">15:00-16:00</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event coffee">
+      <span class="time">16:00-16:30</span>
+      <span class="activity">Coffee Break</span>
+    </div>
+    <div class="event work">
+      <span class="time">16:30-18:30</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event meal">
+      <span class="time">18:30-20:00</span>
+      <span class="activity">Dinner</span>
+    </div>
+    <div class="event talk">
+      <span class="time">20:00-21:00</span>
+      <span class="activity"><b>Tutorial:</b> Victor Lagerkvist</span>
+    </div>
+  </div>
+
+  <!-- Wednesday -->
+  <div class="day" id="day-monday">
+    <h2>Wednesday</h2>
+    <div class="event meal">
+      <span class="time">07:30-08:30</span>
+      <span class="activity">Breakfast</span>
+    </div>
+    <div class="event sport">
+      <span class="time">08:30-19:00</span>
+      <span class="activity">Congress Hike</span>
+    </div>
+    <div class="event meal">
+      <span class="time">19:00-20:30</span>
+      <span class="activity">Dinner</span>
+    </div>
+  </div>
+
+  <!-- Thursday -->
+  <div class="day" id="day-monday">
+    <h2>Thursday</h2>
+    <div class="event sport">
+      <span class="time">05:30-07:30</span>
+      <span class="activity">Post-Hike Morning Run</span>
+    </div>
+    <div class="event meal">
+      <span class="time">07:30-10:00</span>
+      <span class="activity">Breakfast</span>
+    </div>
+    <div class="event talk">
+      <span class="time">10:00-11:00</span>
+      <span class="activity"><b>Talk:</b> Standa Zivny</span>
+    </div>
+    <div class="event coffee">
+      <span class="time">11:00-11:30</span>
+      <span class="activity">Coffee Break</span>
+    </div>
+    <div class="event work">
+      <span class="time">11:30-13:00</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event meal">
+      <span class="time">13:00-14:00</span>
+      <span class="activity">Lunch</span>
+    </div>
+    <div class="event talk">
+      <span class="time">14:00-15:00</span>
+      <span class="activity"><b>Talk:</b> Sebastian Meyer</span>
+    </div>
+    <div class="event work">
+      <span class="time">15:00-16:00</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event coffee">
+      <span class="time">16:00-16:30</span>
+      <span class="activity">Coffee Break</span>
+    </div>
+    <div class="event work">
+      <span class="time">16:30-18:30</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event meal">
+      <span class="time">18:30-20:00</span>
+      <span class="activity">Dinner</span>
+    </div>
+    <div class="event talk">
+      <span class="time">20:00-21:00</span>
+      <span class="activity"><b>Tutorial:</b> Gianluca Tasinato</span>
+    </div>
+  </div>
+
+  <!-- Friday -->
+  <div class="day" id="day-monday">
+    <h2>Friday</h2>
+    <div class="event meal">
+      <span class="time">07:30-10:00</span>
+      <span class="activity">Breakfast</span>
+    </div>
+    <div class="event talk">
+      <span class="time">10:00-11:00</span>
+      <span class="activity"><b>Talk:</b> Zarathustra Brady</span>
+    </div>
+    <div class="event coffee">
+      <span class="time">11:00-11:30</span>
+      <span class="activity">Coffee Break</span>
+    </div>
+    <div class="event work">
+      <span class="time">11:30-13:00</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event meal">
+      <span class="time">13:00-14:00</span>
+      <span class="activity">Lunch</span>
+    </div>
+    <div class="event talk">
+      <span class="time">14:00-15:00</span>
+      <span class="activity"><b>Talk:</b> Žaneta Semanišinová</span>
+    </div>
+    <div class="event work">
+      <span class="time">15:00-16:00</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event coffee">
+      <span class="time">16:00-16:30</span>
+      <span class="activity">Coffee Break</span>
+    </div>
+    <div class="event work">
+      <span class="time">16:30-18:30</span>
+      <span class="activity">Work Time</span>
+    </div>
+    <div class="event meal">
+      <span class="time">18:30-20:00</span>
+      <span class="activity">Dinner</span>
+    </div>
+    <div class="event talk">
+      <span class="time">20:00-21:00</span>
+      <span class="activity"><b>Tutorial:</b> Gianluca Tasinato</span>
+    </div>
+  </div>
+
+  <!-- Saturday -->
+  <div class="day" id="day-monday">
+    <h2>Saturday</h2>
+    <div class="event meal">
+      <span class="time">07:30-10:00</span>
+      <span class="activity">Breakfast</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
