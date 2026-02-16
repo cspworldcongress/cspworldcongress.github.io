@@ -1,0 +1,104 @@
+<html>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Option 1: check by screen width (safe and modern)
+    if (window.innerWidth <= 768) {
+      window.location.href = "mobile.html";
+    }
+
+    // Option 2: fallback by user agent (covers older devices)
+    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = "mobile.html";
+    }
+  });
+</script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>Homepage of the CSP World Congress</title>
+</head>
+<style>
+
+.programme-table { border-collapse: collapse; width: 100%; }
+.programme-table th, .programme-table td { border: 1px solid #ddd; padding: 5px; text-align: center; vertical-align: middle; }
+.time-column { border-right: none; width: 80px; font-weight: bold; text-align: left; padding-left: 5px; background-color: #9BC3E8; }
+.meal { background-color: #FCE4CA; }
+.coffee { background-color: #FEF3E7; }
+.sport { background-color: #E8FCCA; }
+.wine { background-color: #F9BEC7; }
+.time { background-color: #9BC3E8; }
+.dinner { background-color: #FCE4CA; } /* same color as breakfast/lunch */
+strong { font-weight: bold; }
+.full {
+    flex-basis: 100%;
+    width: 100%;
+}
+</style>
+<body>
+
+<div class="page" id="main">
+        <div class="topbar">
+            <span class="topbaritem"><a href="#current" style="text-decoration: none; color: inherit;">CWC 2026</a></span>
+            <span class="topbaritem"><a href="#previouseditions" style="text-decoration: none; color: inherit;">PREVIOUS EDITIONS</a></span>
+        </div>
+        <div class="thisyear"></div>
+    </div>
+
+    <div class="item full">
+      <h2>When?</h2>
+        <p>The congress will take place from Monday, 22 September to Friday, 26 September. Arrival is on Sunday evening and departure is on Saturday morning.</p>
+      <h2>Where?</h2>
+        <p>The presentations, accommodation, and meals will take place at the hotel <a href="https://lesneigesdantan.it/">Les Neiges d'Antan</a> in Cervinia, Italy.</p>
+      <h2>How to attend?</h2>
+        <p>Participation is by invitation only. A conference fee of 140 euros will be asked for each participant. If you have not received an invitation, you can email the organisers.</p>
+    </div>
+<div class="page" id="previouseditions">
+        <h1 style="color:black;">PREVIOUS EDITIONS</h1>
+        <div class="shelf">
+            <div class="previous">
+                <div class="previousitm voels"></div><a class="previousft" href="http://cspworldcongress.wordpress.com/home/"></a><div class="year">2020</div>
+            </div>
+            <div class="previous">
+                <div class="previousitm kranjska"></div><a class="previousft" href="http://cspworldcongress.wordpress.com"></a><div class="year">2021</div>
+            </div>
+            <div class="previous">
+                <div class="molveno previousitm"></div><a class="previousft" href="http://cwc.csp-seminar.org"></a><div class="year">2022</div>
+            </div>
+            <div class="previous">
+                <div class="weissensee previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2023/"></a><div class="year">2023</div>
+            </div>
+            <div class="previous">
+              <div class="colfosco previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2024/"></a><div class="year">2024</div>
+            </div>
+            <div class="previous">
+              <div class="cervinia previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2025/"></a><div class="year">2025</div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script>document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+    
+    window.addEventListener("scroll", function() {
+  const offset = window.pageYOffset;
+  const elements = document.querySelectorAll('.thisyear');
+   elements.forEach((element) => {
+            element.style.backgroundPositionY = 0.7*offset + "px";
+        });
+        
+    const elementsOp = document.querySelectorAll('.chgbg');
+    elementsOp.forEach((element) => {
+         element.style.opacity = (1*window.innerHeight-offset)/window.innerHeight;   
+    });
+    });
+    </script>
+</html>
