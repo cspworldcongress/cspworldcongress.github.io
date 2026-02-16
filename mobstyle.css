@@ -1,0 +1,453 @@
+/* -------------------- Reset -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* -------------------- Navbar -------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  z-index: 1002;
+}
+
+/* Background per page */
+.navbar.home .menu-toggle { background: transparent; }
+.navbar.subpage .menu-toggle { background: black; }
+
+/* -------------------- Hamburger / X -------------------- */
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  position: relative; /* for absolute positioning of lines */
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 1003;
+}
+
+/* Bars */
+.menu-toggle span {
+  display: block;
+  position: absolute;
+  left: 6px;          /* horizontal padding inside square */
+  width: 28px;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Fixed vertical positions */
+.menu-toggle span:nth-child(1) { top: 8px; }
+.menu-toggle span:nth-child(2) { top: 18px; }
+.menu-toggle span:nth-child(3) { top: 28px; }
+
+/* X state */
+.menu-toggle.active span:nth-child(1) { top: 50%; transform: rotate(45deg); margin-top: -2px; }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { top: 50%; transform: rotate(-45deg); margin-top: -2px; }
+
+/* -------------------- Slide-out Menu -------------------- */
+.menu {
+  list-style: none;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 220px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  padding-top: 50px;           
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+.menu.active { left: 0; }
+.menu li { border-bottom: 1px solid rgba(255,255,255,0.2); }
+.menu li:last-child { border-bottom: none; }
+.menu a { display: block; padding: 15px 20px; color: white; text-decoration: none; }
+.menu a:hover { background: rgba(255,255,255,0.1); }
+
+/* -------------------- Overlay -------------------- */
+.menu-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+}
+.menu-overlay.active { opacity: 1; visibility: visible; }
+
+/* -------------------- Hero Section (Cinematic) -------------------- */
+body.home .hero {
+  height: 100vh;
+  background: url("cervinia.jpg") no-repeat center center/cover;
+  position: relative;
+}
+
+body.home .hero-content {
+  position: absolute;
+  top: 48%;                 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  line-height: 1.1;
+}
+
+body.home .hero-content h1 {
+  font-size: 6rem; /* fixed size, guaranteed to be huge */
+  font-weight: 800;
+  margin: 0 0 3rem 0;
+}
+
+body.home .hero-content p {
+  font-size: 3rem; /* fixed proportional subtitle */
+  font-weight: 300;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* -------------------- Responsive Font Scaling -------------------- */
+
+@media (max-width: 768px) {
+  body.home .hero-content h1 { font-size: 6rem; }
+  body.home .hero-content p { font-size: 3rem; }
+}
+
+@media (max-width: 480px) {
+  body.home .hero-content h1 { font-size: 4rem; }
+  body.home .hero-content p { font-size: 2rem; }
+}
+
+
+/* -------------------- Subpage content -------------------- */
+body.subpage {
+  background: #f4f4f4;
+}
+.subpage .content {
+  margin-top: 50px;
+  padding: 20px;
+}
+.subpage .content h1 { margin-top: 0; }
+.subpage a { color: #0077cc; text-decoration: none; margin-right: 10px; }
+.subpage a:hover { text-decoration: underline; }
+
+/* -------------------- Responsive -------------------- */
+@media (min-width:600px) and (max-width:1024px) {
+  .menu { width: 250px; }
+  .menu a { padding: 18px 25px; font-size: 1.1rem; }
+  .menu-toggle { width: 50px; height: 50px; }
+  body.home .hero h1 { font-size: 2.5rem; }
+  body.home .hero p { font-size: 1.4rem; }
+}
+
+@media (min-width:1025px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    display: flex !important;
+    background: transparent;
+    padding-top: 0;
+    left: 0;
+    transition: none;
+  }
+  .menu li { border: none; }
+  .menu a { padding: 10px 15px; color: white; }
+  .menu-toggle { display: none; }
+  .menu-overlay { display: none; }
+  body.home .hero h1 { font-size: 3rem; }
+  body.home .hero p { font-size: 1.6rem; }
+}
+
+/* -------------------- Subpage paragraph spacing -------------------- */
+.subpage p {
+  margin: 1em 0;       /* adds space between paragraphs */
+  line-height: 1.6;    /* ensures readable spacing */
+}
+
+/* -------------------- Subpage hyperlinks -------------------- */
+.subpage p a {
+  text-decoration: underline;
+  color: #0077cc;
+  margin: 0;            /* remove extra margin */
+  padding: 0;           /* remove extra padding */
+  line-height: inherit; /* inherit paragraph spacing */
+  display: inline;      /* prevent extra vertical space */
+}
+
+/* -------------------- Space before subtitles (h4) -------------------- */
+.subpage h4 {
+  margin-top: 2em;     /* adds space before h4 */
+  margin-bottom: 0.5em;/* optional, space after subtitle */
+  font-weight: 600;    /* optional: make subtitle stand out */
+  color: #333;         /* optional */
+}
+
+/* -------------------- Align list items with paragraphs and subtitles -------------------- */
+.subpage ul {
+  padding-left: 20px; /* overall padding for the whole list */
+  margin-left: 0;     /* remove default left margin */
+  list-style-position: inside; /* optional: bullet aligns with text */
+}
+
+.subpage ul li {
+  padding-left: 0;        /* remove extra padding inside li */
+}
+
+/* -------------------- Menu list items -------------------- */
+.navbar .menu {
+  list-style: none;
+  padding: 0;      /* remove extra padding from the ul */
+  margin: 0;       /* remove extra margin from the ul */
+  padding-top: 60px; /* push the first menu item below the toggle button */
+}
+
+.navbar .menu li {
+  margin: 0;       /* remove margin above/below each li */
+  padding: 0;      /* optional: remove internal padding if present */
+}
+
+.navbar .menu a {
+  display: block;      /* ensures clickable area covers the full row */
+  padding: 15px 20px;  /* keeps spacing inside each menu link */
+  text-decoration: none;
+  color: white;
+}
+
+.navbar .menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* -------------------- Programme page -------------------- */
+.programme .day {
+  margin-bottom: 3em;  /* space between days */
+}
+
+.programme .day .event {
+  display: flex;
+  align-items: flex-start;       /* align time and activity to top */
+  padding: 12px 20px;            /* card height (~60% of original) */
+  margin-bottom: 4px;            /* smaller gap between cards */
+  border-radius: 12px;
+  color: black;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Time column */
+.programme .day .event .time {
+  width: 120px;                  /* fixed width for alignment */
+  flex-shrink: 0;
+  font-weight: 600;
+  margin-right: 20px;            /* space between time and activity */
+}
+
+/* Activity description */
+.programme .day .event .activity {
+  flex: 1;
+}
+
+/* Softer background colors for all event types */
+.programme .day .event.talk { background-color: #BEEBF9; }
+.programme .day .event.work { background-color: #DBDBDB; }
+.programme .day .event.meal { background-color: #FCE4CA; }     
+.programme .day .event.coffee { background-color: #FEF3E7; }   
+.programme .day .event.sport { background-color: #E8FCCA; }
+.programme .day .event.wine { background-color: #F9BEC7; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .programme .day { margin-bottom: 2.5em; }
+  .programme .day .event { font-size: 0.95rem; padding: 10px 15px; }
+  .programme .day .event .time { width: 100px; margin-right: 15px; }
+}
+
+@media (max-width: 480px) {
+  .programme .day { margin-bottom: 2em; }
+  .programme .day .event { font-size: 0.9rem; padding: 8px 12px; }
+  .programme .day .event .time { width: 80px; margin-right: 12px; }
+}
+
+/* Make the organisers list compact */
+.organisers {
+  padding-left: 0;      /* remove default padding */
+  margin: 0;            /* remove default margin */
+}
+
+.organisers li {
+  margin: 0;            /* remove extra spacing */
+  padding: 0;           /* remove extra spacing */
+}
+
+.organisers li a {
+  display: inline;   /* ensures link does not create extra space */
+  margin: 0;
+  padding: 0;
+}
+
+.filter-buttons {
+  margin-bottom: 15px;
+}
+
+.filter-buttons button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Default "Show All" button */
+.filter-buttons button:first-child {
+  background-color: #444;
+  color: white;
+}
+
+.filter-buttons button:first-child:hover {
+  background-color: #555;
+}
+
+/* "Talks Only" button styled like .talk */
+.filter-buttons button:last-child {
+  background-color: #BEEBF9;
+  color: black;
+}
+
+.filter-buttons button:last-child:hover {
+  background-color: #a8d8eb;
+}
+
+#previouseditions {
+    height: 90vh;   
+}
+
+
+
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.previous {
+  flex-grow: 1;
+  position: relative;
+  width: 50%;
+  aspect-ratio: 1 / 1;   /* square tiles on desktop */
+}
+
+@media (max-width: 768px) {
+  .previous {
+    width: 100%;         /* one per row on mobile */
+    aspect-ratio: 16 / 9; /* rectangular tiles */
+  }
+}
+
+.year {
+  position: absolute;
+  font-weight: bolder;
+  font-size: clamp(1.2rem, 8vw, 3rem); /* scales with tile width */
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  pointer-events: none; /* keeps links clickable */
+  max-width: 90%;       /* prevents overflow */
+  word-wrap: break-word;
+}
+
+.previousitm {
+  width: 100%;
+  height: 100%;
+  background-size: cover;    /* cover ensures no stripes */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.previousft {
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 2;
+}
+
+.previousitm {
+    height: 100%;
+    width: 100%;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Fine-tune for very small screens */
+@media (max-width: 768px) {
+  .year {
+    font-size: 8vw;   /* larger relative size on phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .year {
+    font-size: 10vw;  /* even bigger on very small screens */
+  }
+}
+
+.voels {
+    background-image: url("schlern-small-32.jpg");
+    
+}
+
+.kranjska {
+    background-image: url("triglav-small-32.jpg");
+ 
+}
+
+.molveno {
+    background-image: url("molveno-small-32.jpg");
+}
+
+.weissensee {
+    background-image: url("weissensee-small-32.jpg");
+}
+
+.colfosco {
+    background-image: url("colfosco.jpg");
+}
+
+.thisyear  {
+    background-image: url("cervinia.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    /*top: -110vh;*/
+    top: 0vh;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
