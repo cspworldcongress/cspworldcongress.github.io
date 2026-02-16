@@ -94,7 +94,7 @@ html, body {
 /* -------------------- Hero Section (Cinematic) -------------------- */
 body.home .hero {
   height: 100vh;
-  background: url("cervinia.jpg") no-repeat center center/cover;
+  background: url("mountain.jpg") no-repeat center center/cover;
   position: relative;
 }
 
@@ -436,11 +436,15 @@ body.subpage {
 }
 
 .colfosco {
-    background-image: url("colfosco.jpg");
+    background-image: url("kolfuschg-small-32.jpg");
+}
+
+.cervinia {
+    background-image: url("cervinia-small-32.jpg");
 }
 
 .thisyear  {
-    background-image: url("cervinia.jpg");
+    background-image: url("mountain.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
