@@ -243,13 +243,14 @@ h1 {
 }
 
 .hero-content h1 {
-    font-size: 4rem;
+    font-size: 16rem;
     margin: 0;
     letter-spacing: 2px;
+    color: #ffffff;   /* force white */
 }
 
 .hero-content h2 {
-    font-size: 2rem;
+    font-size: 5rem;
     margin: 10px 0;
     font-weight: 400;
 }
