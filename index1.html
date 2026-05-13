@@ -1,0 +1,112 @@
+<html>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Option 1: check by screen width (safe and modern)
+    if (window.innerWidth <= 768) {
+      window.location.href = "mobile.html";
+    }
+
+    // Option 2: fallback by user agent (covers older devices)
+    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = "mobile.html";
+    }
+  });
+</script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>Homepage of the CSP World Congress</title>
+</head>
+<style>
+
+.programme-table { border-collapse: collapse; width: 100%; }
+.programme-table th, .programme-table td { border: 1px solid #ddd; padding: 5px; text-align: center; vertical-align: middle; }
+.time-column { border-right: none; width: 80px; font-weight: bold; text-align: left; padding-left: 5px; background-color: #9BC3E8; }
+.meal { background-color: #FCE4CA; }
+.coffee { background-color: #FEF3E7; }
+.sport { background-color: #E8FCCA; }
+.wine { background-color: #F9BEC7; }
+.time { background-color: #9BC3E8; }
+.dinner { background-color: #FCE4CA; } /* same color as breakfast/lunch */
+strong { font-weight: bold; }
+.full {
+    flex-basis: 100%;
+    width: 100%;
+}
+</style>
+<body>
+
+<div class="page" id="main">
+    <div class="hero-content">
+        <h1>CWC 2026</h1>
+        <h2>September 13-19</h2>
+        <p>Livigno, Italy</p>
+    </div>
+    <div class="thisyear"></div>
+</div>
+
+<div class="item full">
+  <h2>Where?</h2>
+  <p>The presentations, accommodation, and meals will take place at the hotel <a href="https://www.lacsalin.com/en">Lac Salin</a> in Livigno, Italy.</p>
+  <p>This year, we made a special effort to find a hotel that is even easier to access than in previous years. The closest bus stop to the hotel is Livigno, S.Rocco, Pedrana 4, but the hotel is also accessible by a 20 minute walk from the bus stop Livigno, Centro. For connections to Livigno, Centro from Switzerland, please consult the <a href="https://www.sbb.ch/en">SBB</a> website. For local busses from Italy, please use the <a href="https://www.busperego.com/en/">Bus Perego</a> website.</p>
+  <h4>By train</h4>
+  <p>From most of the directions, the easiest way of reaching Livigno is via Zürich, from where the connection takes 3 hours. The connections and tickets might be found at the <<a href="https://www.sbb.ch/en">SBB</a> website. If you are traveling from Germany, it might be cheaper to buy a direct train ticket to Zernez and a bus ticket from there. From Austria, Livigno can also be reached by bus, train and bus again via Landeck and Pfunds. Another cheap option of reaching Livigno from anywhere in Switzerland or from Landeck is buying the <a href="https://www.sbb.ch/en/offers/saver-day-pass">SBB Saver Day Pass</a> several month in advance.</p>
+  <h4>By plane</h4>
+  <p>While Livigno is located in Italy, we recommend flying to Zürich as the connections from all Italian airports are long and tedious.</p>
+  
+  <h2>When?</h2>
+  <p>The congress will take place from Monday, 14 September to Friday, 18 September. Arrival is on Sunday evening and departure is on Saturday morning.</p>
+
+  <h2>How to attend?</h2>
+  <p>Participation is by invitation only. A conference fee will be asked for each participant. If you will not receive an invitation, you can email the organisers.</p>
+</div>
+<div class="page" id="previouseditions">
+        <h1 style="color:black;">PREVIOUS EDITIONS</h1>
+        <div class="shelf">
+            <div class="previous">
+              <div class="cervinia previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2025/"></a><div class="year">2025</div>
+            </div>
+            <div class="previous">
+              <div class="colfosco previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2024/"></a><div class="year">2024</div>
+            </div>
+            <div class="previous">
+                <div class="weissensee previousitm"></div><a class="previousft" href="https://cspworldcongress.org/2023/"></a><div class="year">2023</div>
+            </div>
+            <div class="previous">
+                <div class="molveno previousitm"></div><a class="previousft" href="http://cwc.csp-seminar.org"></a><div class="year">2022</div>
+            </div>
+            <div class="previous">
+                <div class="previousitm kranjska"></div><a class="previousft" href="http://cspworldcongress.wordpress.com"></a><div class="year">2021</div>
+            </div>
+            <div class="previous">
+                <div class="previousitm voels"></div><a class="previousft" href="http://cspworldcongress.wordpress.com/home/"></a><div class="year">2020</div>
+            </div>            
+        </div>
+    </div>
+</body>
+    <script>document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+    
+    window.addEventListener("scroll", function() {
+  const offset = window.pageYOffset;
+  const elements = document.querySelectorAll('.thisyear');
+   elements.forEach((element) => {
+            element.style.backgroundPositionY = 0.7*offset + "px";
+        });
+        
+    const elementsOp = document.querySelectorAll('.chgbg');
+    elementsOp.forEach((element) => {
+         element.style.opacity = (1*window.innerHeight-offset)/window.innerHeight;   
+    });
+    });
+    </script>
+</html>
